@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './RegisterPage.css';
 import { urlConfig } from '../../config';
-import { useAppContext } from '../../../context/AuthContext';
+import { useAppContext } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 function RegisterPage() {
