@@ -1,0 +1,44 @@
+
+> import-mongo@1.0.0 start
+> node index.js
+
+MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (/home/project/fullstack-capstone-project/giftlink-backend/util/import-mongo/node_modules/mongodb/lib/sdam/topology.js:303:38)
+    at async Topology._connect (/home/project/fullstack-capstone-project/giftlink-backend/util/import-mongo/node_modules/mongodb/lib/sdam/topology.js:196:28)
+    at async Topology.connect (/home/project/fullstack-capstone-project/giftlink-backend/util/import-mongo/node_modules/mongodb/lib/sdam/topology.js:158:13)
+    at async topologyConnect (/home/project/fullstack-capstone-project/giftlink-backend/util/import-mongo/node_modules/mongodb/lib/mongo_client.js:204:17)
+    at async MongoClient._connect (/home/project/fullstack-capstone-project/giftlink-backend/util/import-mongo/node_modules/mongodb/lib/mongo_client.js:217:13)
+    at async MongoClient.connect (/home/project/fullstack-capstone-project/giftlink-backend/util/import-mongo/node_modules/mongodb/lib/mongo_client.js:142:13)
+    at async loadData (/home/project/fullstack-capstone-project/giftlink-backend/util/import-mongo/index.js:20:9) {
+  reason: TopologyDescription {
+    type: 'Unknown',
+    servers: Map(1) { 'localhost:27017' => [ServerDescription] },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: null,
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  [Symbol(errorLabels)]: Set(0) {},
+  [cause]: MongoNetworkError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+      at connectionFailureError (/home/project/fullstack-capstone-project/giftlink-backend/util/import-mongo/node_modules/mongodb/lib/cmap/connect.js:353:20)
+      at Socket.<anonymous> (/home/project/fullstack-capstone-project/giftlink-backend/util/import-mongo/node_modules/mongodb/lib/cmap/connect.js:268:44)
+      at Object.onceWrapper (node:events:639:26)
+      at Socket.emit (node:events:524:28)
+      at emitErrorNT (node:internal/streams/destroy:169:8)
+      at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+    [Symbol(errorLabels)]: Set(1) { 'ResetPool' },
+    [cause]: AggregateError [ECONNREFUSED]: 
+        at internalConnectMultiple (node:net:1122:18)
+        at afterConnectMultiple (node:net:1689:7) {
+      code: 'ECONNREFUSED',
+      [errors]: [Array]
+    }
+  }
+}
